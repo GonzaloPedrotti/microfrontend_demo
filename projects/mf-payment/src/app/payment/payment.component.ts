@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ICommonProduct } from '@commons-lib';
+import { CommonsLibService, ICommonProduct } from '@commons-lib';
 @Component({
   standalone: true,
   selector: 'app-payment',
@@ -9,16 +9,17 @@ import { ICommonProduct } from '@commons-lib';
   imports: [CommonModule],
 })
 export class PaymentComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private commonLibService: CommonsLibService
+  ) {}
 
   products: ICommonProduct[] = [];
 
   ngOnInit(): void {
-    const productsStorage = localStorage.getItem('products');
-    console.log(productsStorage);
-
-    if (productsStorage) {
-      this.products = JSON.parse(productsStorage) as ICommonProduct[];
-    }
+    this.commonLibService.productList.subscribe({
+      next: (res) => {
+        this.products = res;
+      }
+    })
   }
 }
