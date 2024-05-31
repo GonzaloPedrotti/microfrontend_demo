@@ -4,9 +4,6 @@
     "baseUrl": "./",
     "paths": {
       "@commons-lib": ["projects/commons-lib/src/public-api.ts"],
-      "commons-lib": [
-        "dist/commons-lib"
-      ]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

@@ -8,14 +8,13 @@ import { ICommonProduct } from './models/product.interface';
 export class CommonsLibService {
   private _products: ICommonProduct[] = [];
 
-  private _channelSource = new BehaviorSubject<number>(0);
-  channelPayment$ = this._channelSource.asObservable();
-
+  channelPayment = new BehaviorSubject<number>(0);
   productList: BehaviorSubject<ICommonProduct[]> = new BehaviorSubject<ICommonProduct[]>([]);
 
   sendData(product: ICommonProduct): void {
     this._products.push(product);
     this.productList.next(this._products);
-    this._channelSource.next(this._products.length);
+    this.channelPayment.next(this._products.length);
   }
+  
 }

@@ -4,6 +4,7 @@ module.exports = withModuleFederationPlugin({
 
   name: 'mfShopping',
 
+  // dobbiamo fare un export dei moduli che usiamo fuori, in questo caso, il modulo ProductsModule 
   exposes: {
     './ProductModule': './projects/mf-shopping/src/app/products/products.module.ts',
   },
@@ -12,5 +13,8 @@ module.exports = withModuleFederationPlugin({
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
 
-  sharedMappings: ["@commons-lib"]
+    // Tutti tree progetti devono usare la libreria commons-lib
+    sharedMappings: [
+      "@commons-lib"
+    ]
 });

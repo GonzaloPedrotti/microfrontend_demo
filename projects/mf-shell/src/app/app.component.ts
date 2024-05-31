@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'mf-shell';
 
-  public channelPayment$: Observable<number> = this.commonsLibService.channelPayment$;
+  public channelPayment$: Observable<number> = this.commonsLibService.channelPayment;
 
   constructor(
     private commonsLibService: CommonsLibService
