@@ -12,9 +12,9 @@ module.exports = withModuleFederationPlugin({
   shared: {
     ...shareAll({
       singleton: true,
-      strictVersion: true,
+      strictVersion: false,
       requiredVersion: "auto",
     }),
   },
-  sharedMappings: ["@commons-lib"],
+  sharedMappings: ["commons-lib"],
 });

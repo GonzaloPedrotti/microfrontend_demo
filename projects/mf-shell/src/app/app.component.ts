@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonsLibService } from '@commons-lib';
+import { CommonsLibService } from 'commons-lib';
 import { Observable } from 'rxjs';
 
 @Component({

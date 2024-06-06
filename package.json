@@ -10,7 +10,6 @@
     "mf-shell": "ng s mf-shell",
     "mf-payment": "ng s mf-payment",
     "mf-shopping": "ng s mf-shopping",
-
     "all": "npm-run-all --parallel mf-shell mf-payment mf-shopping"
   },
   "private": true,
@@ -23,6 +22,7 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "commons-lib": "file:dist/commons-lib/commons-lib-0.0.1.tgz",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -45,4 +45,3 @@
     "typescript": "~5.1.3"
   }
 }
-
